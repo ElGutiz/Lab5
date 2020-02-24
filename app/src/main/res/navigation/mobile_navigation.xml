@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.polllab.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/toAddQuestion"
+            app:destination="@id/nav_add" />
+        <action
+            android:id="@+id/toSurvey"
+            app:destination="@id/nav_survey" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_survey"
+        android:name="com.example.polllab.ui.start_survey.SurveyFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_survey" >
+        <action
+            android:id="@+id/toRate"
+            app:destination="@id/nav_rate" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.example.polllab.ui.about.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/nav_add"
+        android:name="com.example.polllab.ui.add_question.AddQuestionFragment"
+        android:label="Add Question"
+        tools:layout="@layout/fragment_add_question" />
+    <fragment
+        android:id="@+id/nav_results"
+        android:name="com.example.polllab.ui.results.ResultsFragment"
+        android:label="Results"
+        tools:layout="@layout/fragment_results" >
+        <action
+            android:id="@+id/restartSurvey"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_rate"
+        android:name="com.example.polllab.ui.rate.RateFragment"
+        android:label="Rate"
+        tools:layout="@layout/fragment_rating" >
+        <action
+            android:id="@+id/toResults"
+            app:destination="@id/nav_results" />
+    </fragment>
+
+</navigation>
